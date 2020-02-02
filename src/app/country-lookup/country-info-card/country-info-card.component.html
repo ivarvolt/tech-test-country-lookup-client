@@ -1,0 +1,14 @@
+<mat-card *ngIf="countryInfo" class="country-info-card mx-auto">
+  <mat-card-header>
+    <mat-card-title>{{countryInfo.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="countryInfo.flag" alt="Photo of countries flag">
+
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <p id="currency" *ngIf="countryInfo.currencies && countryInfo.currencies.length > 0">Currency: {{countryInfo.currencies[0].name}}</p>
+    <p id="lat" *ngIf="countryInfo.latlng && countryInfo.latlng.length > 0">Latitude: {{countryInfo.latlng[0]}}</p>
+    <p id="lng" *ngIf="countryInfo.latlng && countryInfo.latlng.length > 1">Longitude: {{countryInfo.latlng[1]}}</p>
+    <p id="area" *ngIf="countryInfo.area">Area size: {{countryInfo.area}} km2</p>
+  </mat-card-content>
+</mat-card>

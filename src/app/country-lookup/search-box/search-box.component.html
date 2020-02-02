@@ -1,0 +1,12 @@
+<form>
+  <mat-form-field id="countrySearchForm" class="mt-4 d-flex justify-content-center w-100" [style.fontSize.px]=17 [style.width.px]=500>
+    <input matInput type="search" class="w-100" placeholder="Search for a country" [matAutocomplete]="auto"
+           [formControl]="searchBoxControl">
+    <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption (optionSelected)="selectionEmit($event)">
+      <mat-option *ngFor="let choice of filteredOptions | async" [value]="choice.label">
+        <small>{{choice.code}}</small>
+        <span> - {{choice.label}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

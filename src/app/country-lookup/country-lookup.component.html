@@ -1,0 +1,5 @@
+<div class="flex-column">
+  <search-box [searchChoices]="searchChoices" (selection)="setSelection($event)"></search-box>
+  <country-info-card [countryInfo]="selectedCountryInfo"></country-info-card>
+  <search-history [searchHistory]="searchHistory" (clickedHistory)="setSelection($event)"></search-history>
+</div>

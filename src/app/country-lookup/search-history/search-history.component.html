@@ -1,0 +1,6 @@
+<div class="d-flex flex-column mt-3 mb-5">
+  <h3 class=" mx-auto">Search History</h3>
+  <mat-list class="w-50 mx-auto">
+    <mat-list-item *ngFor="let search of searchHistory" class="list-item" (click)="clickedHistory.emit(search)">{{search}}</mat-list-item>
+  </mat-list>
+</div>
