@@ -22,8 +22,8 @@ export class CountryLookupService {
           return {
             'code': country.alpha2Code,
             'label': country.name
-          } as SearchBoxAutocomplete
-        })
+          } as SearchBoxAutocomplete;
+        });
       })
     );
   }
@@ -32,7 +32,7 @@ export class CountryLookupService {
     const url = `${this.API_URL}/v2/name/${countryName}?fullText=true&fields=flag;name;currencies;latlng;area`;
     return this.httpClient.get<RestCountriesResponse[]>(url).pipe(
       map((countries) => {
-        return countries.length > 0 ? countries[0] : {} as RestCountriesResponse
+        return countries.length > 0 ? countries[0] : {} as RestCountriesResponse;
       })
     );
   }

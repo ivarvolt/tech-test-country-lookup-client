@@ -24,7 +24,7 @@ export class SearchBoxComponent implements OnInit {
   ngOnInit() {
     this.filteredOptions = this.searchBoxControl.valueChanges.pipe(
       startWith(''),
-      map(value => value.length >= this.minCharsForAutocomplete ? this.filter(value): [])
+      map(value => value.length >= this.minCharsForAutocomplete ? this.filter(value) : [])
     );
   }
 
@@ -35,7 +35,7 @@ export class SearchBoxComponent implements OnInit {
 
   private filter(value: string): SearchBoxAutocomplete[] {
     const filterValue = value.toLowerCase();
-    let filteredChoices =  this.searchChoices.filter(choice => choice.label.toLowerCase().includes(filterValue));
+    const filteredChoices =  this.searchChoices.filter(choice => choice.label.toLowerCase().includes(filterValue));
     return filteredChoices.length > this.maxReturnedChoices ? filteredChoices.splice(0, this.maxReturnedChoices) : filteredChoices;
   }
 }

@@ -35,11 +35,11 @@ describe('CountryInfoCardComponent', () => {
 
   it('should show full card data', () => {
     component.countryInfo = {
-      "currencies":[{"code":"EUR","name":"Euro","symbol":"€"}],
-      "flag":"https://restcountries.eu/data/est.svg",
-      "name":"Estonia",
-      "latlng":[59.0,26.0],
-      "area":45227.0
+      'currencies': [{'code': 'EUR', 'name': 'Euro', 'symbol': '€'}],
+      'flag': 'https://restcountries.eu/data/est.svg',
+      'name': 'Estonia',
+      'latlng': [59.0, 26.0],
+      'area': 45227.0
     } as RestCountriesResponse;
 
     fixture.detectChanges();

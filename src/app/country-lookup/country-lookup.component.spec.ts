@@ -14,7 +14,7 @@ describe('CountryLookupComponent', () => {
 
   it('should add to selection history on setSelection', () => {
     spyOn(mockCountryLookupService, 'getCountryByFullName').and.returnValue(of({}));
-    let selectedCountryFullName = 'Estonia';
+    const selectedCountryFullName = 'Estonia';
     component.setSelection(selectedCountryFullName);
     expect(component.searchHistory.length).toEqual(1);
     expect(component.searchHistory[0]).toEqual(selectedCountryFullName);

@@ -25,10 +25,11 @@ describe('CountryLookupService', () => {
   });
 
   it('should search country returning flag;name;currencies;latlng;area dataset', () => {
-    let countryName = 'Estonia';
+    const countryName = 'Estonia';
     service.getCountryByFullName(countryName).subscribe();
 
-    const req = httpMock.expectOne(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true&fields=flag;name;currencies;latlng;area`);
+    const url = `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true&fields=flag;name;currencies;latlng;area`;
+    const req = httpMock.expectOne(url);
     expect(req.request.method).toBe('GET');
   });
 });
