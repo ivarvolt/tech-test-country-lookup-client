@@ -27,7 +27,7 @@ describe('CountryInfoCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should not crash without input data or empty object', () => {
+  it('should not error without initialization data', () => {
     component.countryInfo = {} as RestCountriesResponse;
     fixture.detectChanges();
     expect(component).toBeTruthy();

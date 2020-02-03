@@ -25,7 +25,7 @@ describe('SearchHistoryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should not crash without data', () => {
+  it('should not error without initialization data', () => {
     expect(component).toBeTruthy();
   });
 

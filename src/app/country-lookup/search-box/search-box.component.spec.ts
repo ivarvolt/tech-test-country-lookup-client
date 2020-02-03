@@ -34,7 +34,7 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should not crash without any input data', () => {
+  it('should not error without initialization data', () => {
     expect(component).toBeTruthy();
   });
 
